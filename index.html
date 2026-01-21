@@ -180,9 +180,9 @@
     async function apiPost(path, payload) {
       const isNetlify = window.location.hostname.endsWith(".netlify.app") || window.location.hostname.endsWith(".netlify.live");
       const functionMap = {
-        "/payment/approve": "/api/payment-approve",
-        "/payment/complete": "/api/payment-complete",
-        "/payment/cancel": "/api/payment-cancel"
+        "/payment/approve": "https://appdown.netlify.app/api/payment-approve",
+        "/payment/complete": "https://appdown.netlify.app/api/payment-complete",
+        "/payment/cancel": "https://appdown.netlify.app/api/payment-cancel"
       };
       const url = isNetlify && functionMap[path] ? functionMap[path] : path;
       const response = await fetch(url, {
